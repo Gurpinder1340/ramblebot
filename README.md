@@ -54,8 +54,10 @@ Sometimes this button takes a little bit to show up when you first open VS Code.
     Begin with Wave 1 in the instructions, and implement LowercaseSentenceTokenizer
     If you have implemented it, there's a bug in your code where it's returning null for the tokens.
     ```
-1. Open the testing side panel by clicking on the beaker on the left of your screen. ![Test Runner Sidebar in VS Code](images/test_runner.png)
-1. Hover over `ramblebot`. A few grey triangles should appear. Click the triangle the furthest to the left.
+1. As of 4/16/26 the testing extension in VS COde is not working with our setup. We will run tests on the command line instead. Use this command:
+    ```
+    javac -cp lib/junit-platform-console-standalone-1.11.4.jar src/*.java && java -jar lib/junit-platform-console-standalone-1.11.4.jar --class-path src --scan-class-path
+    ```
 1. You should expect to see all the tests fail. This is good! You haven't written your solution yet, so it's expected for them to fail.
 1. Validate that you can push to your repo by making any change to this README, adding, committing, and pushing it.
 
