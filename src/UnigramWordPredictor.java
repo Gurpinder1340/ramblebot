@@ -50,8 +50,23 @@ public class UnigramWordPredictor implements WordPredictor {
    */
   public void train(Scanner scanner) {
     List<String> trainingWords = tokenizer.tokenize(scanner);
-
+    
+    neighborMap = new HashMap<>();
+ 
     // TODO: Convert the trainingWords into neighborMap here
+ for(int i = 0; i < trainingWords.size() -1; i++) {
+    List<String> neighbors = new ArrayList<>();
+    String currentString = trainingWords.get(i);
+    String nextString = trainingWords.get(i + 1);
+
+    if (!neighborMap.containsKey(currentString)) {
+      neighborMap.put(currentString, neighbors);
+    }
+  
+      neighborMap.get(currentString).add(nextString);
+ }
+
+   
   }
 
   /**
